@@ -1,6 +1,9 @@
+import { Component } from 'react';
+
 import './index.scss';
 import Navigation from './components/Navigation/Navigation';
-import { Component } from 'react';
+import Table from './components/Table/Table';
+
 export default class App extends Component {
   constructor() {
     super();
@@ -35,6 +38,7 @@ export default class App extends Component {
           prevMonth={this.prevMonth}
           nextMonth={this.nextMonth}
         />
+        <Table />
       </div>
     );
   }
