@@ -3,6 +3,9 @@ import { Component } from 'react';
 import './index.scss';
 import Navigation from './components/Navigation/Navigation';
 import Table from './components/Table/Table';
+import renderTeams from './utils/renderTeams/renderTeams';
+
+const departmentTeams = renderTeams();
 
 export default class App extends Component {
   constructor() {
@@ -38,7 +41,10 @@ export default class App extends Component {
           prevMonth={this.prevMonth}
           nextMonth={this.nextMonth}
         />
-        <Table />
+        <Table
+          currentDate={this.state.currentDate}
+          departmentTeams={departmentTeams}
+        />
       </div>
     );
   }
