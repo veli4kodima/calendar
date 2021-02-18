@@ -13,7 +13,7 @@ const renderTeams = () => {
             ],
           },
           {
-            name: 'FE_Team_User1',
+            name: 'FE_Team_User2',
             vacations: [
               {
                 startDate: '20.02.2020',
@@ -34,7 +34,7 @@ const renderTeams = () => {
         percentageOfAbsent: [0, 2, 0, 0, 1, 2, 2, 2, 2, 2, 1, 1],
         members: [
           {
-            name: 'FE_Team_User1',
+            name: 'BE_Team_User1',
             vacations: [
               {
                 startDate: '15.02.2020',
@@ -49,7 +49,7 @@ const renderTeams = () => {
             ],
           },
           {
-            name: 'FE_Team_User1',
+            name: 'BE_Team_User2',
             vacations: [
               {
                 startDate: '20.02.2020',
@@ -66,11 +66,11 @@ const renderTeams = () => {
         ],
       },
       {
-        name: 'Backend Team',
+        name: 'Designer Team',
         percentageOfAbsent: [0, 2, 0, 0, 1, 2, 2, 2, 2, 2, 1, 1],
         members: [
           {
-            name: 'FE_Team_User1',
+            name: 'DE_Team_User1',
             vacations: [
               {
                 startDate: '15.02.2020',
@@ -85,7 +85,7 @@ const renderTeams = () => {
             ],
           },
           {
-            name: 'FE_Team_User1',
+            name: 'DE_Team_User2',
             vacations: [
               {
                 startDate: '20.02.2020',
@@ -102,11 +102,11 @@ const renderTeams = () => {
         ],
       },
       {
-        name: 'Backend Team',
+        name: 'Manager Team',
         percentageOfAbsent: [0, 2, 0, 0, 1, 2, 2, 2, 2, 2, 1, 1],
         members: [
           {
-            name: 'FE_Team_User1',
+            name: 'ME_Team_User1',
             vacations: [
               {
                 startDate: '15.02.2020',
@@ -121,7 +121,7 @@ const renderTeams = () => {
             ],
           },
           {
-            name: 'FE_Team_User1',
+            name: 'ME_Team_User2',
             vacations: [
               {
                 startDate: '20.02.2020',
@@ -138,11 +138,11 @@ const renderTeams = () => {
         ],
       },
       {
-        name: 'Backend Team',
+        name: 'Project Team',
         percentageOfAbsent: [0, 2, 0, 0, 1, 2, 2, 2, 2, 2, 1, 1],
         members: [
           {
-            name: 'FE_Team_User1',
+            name: 'PE_Team_User1',
             vacations: [
               {
                 startDate: '15.02.2020',
@@ -157,7 +157,7 @@ const renderTeams = () => {
             ],
           },
           {
-            name: 'FE_Team_User1',
+            name: 'PE_Team_User2',
             vacations: [
               {
                 startDate: '20.02.2020',
