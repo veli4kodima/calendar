@@ -13,7 +13,9 @@ export default class AddVacationModal extends Component {
   handleTeamChange = (e) => {
     this.setState({
       selectedTeam: e.target.value,
+      selectedUser: null,
     });
+    document.querySelector('.modal__dropdown--user').value = 'User Name';
   };
 
   handleUserChange = (e) => {
@@ -23,7 +25,7 @@ export default class AddVacationModal extends Component {
   };
 
   render() {
-    console.log(this.state.selectedTeam);
+    console.log(this.state.selectedTeam, this.state.selectedUser);
     return (
       <>
         <div className="modal__overlay"></div>
@@ -68,7 +70,9 @@ export default class AddVacationModal extends Component {
                 (item) =>
                   this.state.selectedTeam !== null &&
                   item.name === this.state.selectedTeam &&
-                  item.members.map((member) => <option>{member.name}</option>)
+                  item.members.map((member) => (
+                    <option key={member.name}>{member.name}</option>
+                  ))
               )}
             </select>
 
