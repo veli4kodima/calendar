@@ -47,7 +47,7 @@ export default class App extends Component {
           departmentTeams={departmentTeams}
         />
 
-        <AddVacationModal />
+        <AddVacationModal departmentTeams={departmentTeams} />
       </div>
     );
   }

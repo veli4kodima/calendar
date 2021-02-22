@@ -460,7 +460,7 @@ body {
     font-weight: 600;
   }
 
-  &__menu {
+  &__dropdown {
     cursor: pointer;
     background: #e9e9e9;
     height: 41px;
@@ -468,6 +468,16 @@ body {
     margin-bottom: 65px;
     width: 100%;
     padding-left: 15px;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &--team,
+    &--user {
+      margin: 0 0 20px;
+    }
 
     option {
       font-size: 12px;
