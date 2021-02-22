@@ -4,6 +4,7 @@ import './index.scss';
 import Navigation from './components/Navigation/Navigation';
 import Table from './components/Table/Table';
 import renderTeams from './utils/renderTeams/renderTeams';
+import AddVacationModal from './components/AddVacationModal/AddVacationModal';
 
 const departmentTeams = renderTeams();
 
@@ -45,6 +46,8 @@ export default class App extends Component {
           currentDate={this.state.currentDate}
           departmentTeams={departmentTeams}
         />
+
+        <AddVacationModal departmentTeams={departmentTeams} />
       </div>
     );
   }
