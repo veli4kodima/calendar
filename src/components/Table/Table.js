@@ -64,6 +64,21 @@ const CalendarBody = (props) => {
     0
   ).getDate();
   const departmentTeams = props.departmentTeams;
+  console.log(departmentTeams);
+  console.log(props.currentDate.toLocaleDateString('en-US', {
+    day: '2-digit',
+    month: 'numeric',
+    year: 'numeric'
+  }));
+  console.log(departmentTeams.teams[0].members[0].vacations[0].startDate.replace(/\./gi, '/' ));
+  console.log(props.currentDate.toLocaleDateString('en-US', {
+    month: 'numeric',
+    year: 'numeric'
+  }) === departmentTeams.teams[0].members[0].vacations[0].startDate.substr(-7).replace(/\./gi, '/') );
+  // console.log(props.currentDate.toLocaleDateString('en-US', {
+  //   month: 'numeric'
+  // }) === departmentTeams.teams[0].members[0].vacations[0].startDate.substr(3, 2) );
+  
 
   //* GETTING CURRENT MONTH DAYS
   for (let dayCounter = 0; dayCounter < daysInMonth; dayCounter++) {
@@ -88,6 +103,7 @@ const CalendarBody = (props) => {
               className={`calendar-table__body-row teamColor${
                 (index % 4) + 1
               } team${index + 1} team-first-row`}
+              key={index + 1}
             >
               <td className="calendar-table__body-first-column first-column">
                 <div className="team-info-cell">
@@ -120,7 +136,8 @@ const CalendarBody = (props) => {
                         : 'calendar-table__body-column'
                     }`}
                     key={'day' + (index + 1)}
-                  ></td>
+                  >
+                  </td>
                 ))
               }
               <td className="calendar-table__body-column sum-cell"></td>
@@ -151,10 +168,17 @@ const CalendarBody = (props) => {
                         className={`${
                           item === 'Sun' || item === 'Sat'
                             ? 'calendar-table__body-column weekend'
-                            : 'calendar-table__body-column'
-                        }`}
+                            : 'calendar-table__body-column '
+                        }
+                        ${
+                          props.currentDate.toLocaleDateString('en-US', { year: 'numeric' }) === element.vacations[0].startDate.substr(-4) 
+                          ? '1111' 
+                          : '2222'
+                        }
+                        `}
                         key={'day' + (index + 1)}
-                      ></td>
+                      >
+                      </td>
                     ))
                   }
                   <td className="calendar-table__body-column sum-cell"></td>
