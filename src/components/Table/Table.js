@@ -87,7 +87,7 @@ const CalendarBody = (props) => {
             <tr
               className={`calendar-table__body-row teamColor${
                 (index % 4) + 1
-              } team-first-row`}
+              } team${index + 1} team-first-row`}
             >
               <td className="calendar-table__body-first-column first-column">
                 <div className="team-info-cell">
