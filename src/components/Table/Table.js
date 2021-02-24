@@ -2,6 +2,17 @@ import { Component } from 'react';
 import spoilerClick from '../../utils/spoilerClick/spoilerClick';
 import changeModalVis from '../../utils/changeModalVis/changeModalVis';
 
+// addPaidDays(cellNumber, paidDays, rowNumber, teamNumber) {
+//   let element = "";
+
+//   paidDays.forEach((day) => {
+//     if(day.month === this.month) {
+      
+//     }
+//   })
+// }
+
+
 const CalendarHead = (props) => {
   const monthDays = [];
   const daysInMonth = new Date(
@@ -65,12 +76,12 @@ const CalendarBody = (props) => {
   ).getDate();
   const departmentTeams = props.departmentTeams;
   console.log(departmentTeams);
-  console.log(props.currentDate.toLocaleDateString('en-US', {
-    day: '2-digit',
-    month: 'numeric',
-    year: 'numeric'
-  }));
-  console.log(departmentTeams.teams[0].members[0].vacations[0].startDate.replace(/\./gi, '/' ));
+  // console.log(props.currentDate.toLocaleDateString('en-US', {
+  //   day: '2-digit',
+  //   month: 'numeric',
+  //   year: 'numeric'
+  // }));
+  console.log(departmentTeams.teams[0].members[0].vacations[0].startDate.substr(-7).replace(/\./gi, '/' ));
   console.log(props.currentDate.toLocaleDateString('en-US', {
     month: 'numeric',
     year: 'numeric'
@@ -79,6 +90,13 @@ const CalendarBody = (props) => {
   //   month: 'numeric'
   // }) === departmentTeams.teams[0].members[0].vacations[0].startDate.substr(3, 2) );
   
+
+    //  departmentTeams.teams.forEach((teamItem, teamIndex) => {
+    //    teamItem.members.forEach((membersItem, membersIndex) => {
+    //     paidDays.push(membersItem.vacations);
+    //   })
+    // })
+    // console.log(paidDays);
 
   //* GETTING CURRENT MONTH DAYS
   for (let dayCounter = 0; dayCounter < daysInMonth; dayCounter++) {
@@ -92,6 +110,7 @@ const CalendarBody = (props) => {
       })
     );
   }
+
 
   return (
     <tbody className="calendar-table__body">
@@ -169,11 +188,6 @@ const CalendarBody = (props) => {
                           item === 'Sun' || item === 'Sat'
                             ? 'calendar-table__body-column weekend'
                             : 'calendar-table__body-column '
-                        }
-                        ${
-                          props.currentDate.toLocaleDateString('en-US', { year: 'numeric' }) === element.vacations[0].startDate.substr(-4) 
-                          ? '1111' 
-                          : '2222'
                         }
                         `}
                         key={'day' + (index + 1)}
