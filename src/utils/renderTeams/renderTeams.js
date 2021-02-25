@@ -18,7 +18,7 @@ const renderTeams = () => {
               {
                 startDate: '20.02.2020',
                 endDate: '22.02.2020',
-                type: 'UnPaid',
+                type: 'Paid',
               },
               {
                 startDate: '20.03.2020',
@@ -39,7 +39,7 @@ const renderTeams = () => {
               {
                 startDate: '15.02.2020',
                 endDate: '22.02.2020',
-                type: 'UnPaid',
+                type: 'Paid',
               },
               {
                 startDate: '20.03.2020',
@@ -73,8 +73,8 @@ const renderTeams = () => {
             name: 'DE_Team_User1',
             vacations: [
               {
-                startDate: '15.02.2020',
-                endDate: '22.02.2020',
+                startDate: '10.02.2020',
+                endDate: '13.02.2020',
                 type: 'UnPaid',
               },
               {
@@ -88,9 +88,9 @@ const renderTeams = () => {
             name: 'DE_Team_User2',
             vacations: [
               {
-                startDate: '20.02.2020',
-                endDate: '22.02.2020',
-                type: 'UnPaid',
+                startDate: '15.02.2020',
+                endDate: '16.02.2020',
+                type: 'Paid',
               },
               {
                 startDate: '20.03.2020',
@@ -109,9 +109,9 @@ const renderTeams = () => {
             name: 'ME_Team_User1',
             vacations: [
               {
-                startDate: '15.02.2020',
-                endDate: '22.02.2020',
-                type: 'UnPaid',
+                startDate: '26.02.2020',
+                endDate: '28.02.2020',
+                type: 'Paid',
               },
               {
                 startDate: '20.03.2020',
@@ -124,14 +124,14 @@ const renderTeams = () => {
             name: 'ME_Team_User2',
             vacations: [
               {
-                startDate: '20.02.2020',
-                endDate: '22.02.2020',
+                startDate: '19.02.2020',
+                endDate: '23.02.2020',
                 type: 'UnPaid',
               },
               {
                 startDate: '20.03.2020',
                 endDate: '22.03.2020',
-                type: 'UnPaid',
+                type: 'Paid',
               },
             ],
           },
@@ -145,9 +145,9 @@ const renderTeams = () => {
             name: 'PE_Team_User1',
             vacations: [
               {
-                startDate: '15.02.2020',
-                endDate: '22.02.2020',
-                type: 'UnPaid',
+                startDate: '05.02.2020',
+                endDate: '09.02.2020',
+                type: 'Paid',
               },
               {
                 startDate: '20.03.2020',
@@ -160,9 +160,9 @@ const renderTeams = () => {
             name: 'PE_Team_User2',
             vacations: [
               {
-                startDate: '20.02.2020',
-                endDate: '22.02.2020',
-                type: 'UnPaid',
+                startDate: '18.02.2020',
+                endDate: '19.02.2020',
+                type: 'Paid',
               },
               {
                 startDate: '20.03.2020',

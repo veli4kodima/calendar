@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import spoilerClick from '../../utils/spoilerClick/spoilerClick';
 import changeModalVis from '../../utils/changeModalVis/changeModalVis';
+import getPaidDays from '../../utils/vacationsMethods/getPaidDays';
+import addPaidDays from '../../utils/vacationsMethods/addPaidDays';
 
 const CalendarHead = (props) => {
   const monthDays = [];
@@ -127,39 +129,52 @@ const CalendarBody = (props) => {
             </tr>
             {
               //* SHOWING EVERY TEAM MEMBER
-              item.members.map((element, count) => (
-                <tr
-                  className={` ${
-                    count === departmentTeams.teams[index].members.length - 1
-                      ? `calendar-table__body-row teamColor${
-                          (index % 4) + 1
-                        } team${index + 1} team-last-row`
-                      : `calendar-table__body-row teamColor${
-                          (index % 4) + 1
-                        } team${index + 1}`
-                  } `}
-                >
-                  <td
-                    className={`calendar-table__body-first-column first-column`}
+              item.members.map((element, count) => {
+                const memberPaidDays = getPaidDays(element.vacations);
+                // console.log(getPaidDays(element.vacations));
+                return (
+                  <tr
+                    className={` ${
+                      count === departmentTeams.teams[index].members.length - 1
+                        ? `calendar-table__body-row teamColor${
+                            (index % 4) + 1
+                          } team${index + 1} team-last-row`
+                        : `calendar-table__body-row teamColor${
+                            (index % 4) + 1
+                          } team${index + 1}`
+                    } `}
                   >
-                    {`${element.name}`}
-                  </td>
-                  {
-                    //* CREATING CURRENT MONTH DAY CELLS
-                    monthDays.map((item, index) => (
-                      <td
-                        className={`${
-                          item === 'Sun' || item === 'Sat'
-                            ? 'calendar-table__body-column weekend'
-                            : 'calendar-table__body-column'
-                        }`}
-                        key={'day' + (index + 1)}
-                      ></td>
-                    ))
-                  }
-                  <td className="calendar-table__body-column sum-cell"></td>
-                </tr>
-              ))
+                    <td
+                      className={`calendar-table__body-first-column first-column`}
+                    >
+                      {`${element.name}`}
+                    </td>
+                    {
+                      //* CREATING CURRENT MONTH DAY CELLS
+                      monthDays.map((item, index) => {
+                        return (
+                          <td
+                            className={`${
+                              item === 'Sun' || item === 'Sat'
+                                ? 'calendar-table__body-column weekend'
+                                : 'calendar-table__body-column'
+                            }`}
+                            key={'day' + (index + 1)}
+                            style={{ position: 'relative' }}
+                          >
+                            {addPaidDays(
+                              index + 1,
+                              memberPaidDays,
+                              props.currentDate.getMonth() + 1
+                            )}
+                          </td>
+                        );
+                      })
+                    }
+                    <td className="calendar-table__body-column sum-cell"></td>
+                  </tr>
+                );
+              })
             }
           </>
         ))

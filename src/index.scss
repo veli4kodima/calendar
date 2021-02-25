@@ -18,6 +18,25 @@ body {
   min-width: 1200px;
 }
 
+.paid-day,
+.unpaid-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 28px;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.paid-day {
+  color: white;
+}
+
 .calendar {
   padding: 0 15px;
 }
@@ -304,6 +323,16 @@ body {
           }
         }
       }
+
+      .paid-day {
+        background-color: $purpleTeamColor;
+      }
+
+      .unpaid-day {
+        color: $purpleTeamColor;
+        border: 1px solid $purpleTeamColor;
+        background-color: rgba($purpleTeamColor, 0.1);
+      }
     }
 
     &.teamColor2 {
@@ -327,6 +356,16 @@ body {
             background-color: $blueTeamColor;
           }
         }
+      }
+
+      .paid-day {
+        background-color: $blueTeamColor;
+      }
+
+      .unpaid-day {
+        color: $blueTeamColor;
+        border: 1px solid $blueTeamColor;
+        background-color: rgba($blueTeamColor, 0.1);
       }
     }
 
@@ -352,6 +391,16 @@ body {
           }
         }
       }
+
+      .paid-day {
+        background-color: $pinkTeamColor;
+      }
+
+      .unpaid-day {
+        color: $pinkTeamColor;
+        border: 1px solid $pinkTeamColor;
+        background-color: rgba($pinkTeamColor, 0.1);
+      }
     }
 
     &.teamColor4 {
@@ -375,6 +424,16 @@ body {
             background-color: $orangeTeamColor;
           }
         }
+      }
+
+      .paid-day {
+        background-color: $orangeTeamColor;
+      }
+
+      .unpaid-day {
+        color: $orangeTeamColor;
+        border: 1px solid $orangeTeamColor;
+        background-color: rgba($orangeTeamColor, 0.1);
       }
     }
 
