@@ -28,9 +28,9 @@ body {
   z-index: 10;
   top: 50%;
   transform: translateY(-50%);
-  left: 1px;
   border-radius: 3px;
   text-align: center;
+  font-size: 12px;
 }
 
 .paid-day {
@@ -527,7 +527,6 @@ body {
 
   &__column {
     width: 145px;
-    border-bottom: 1px solid #d0d0d0;
     margin-bottom: 35px;
   }
 
@@ -540,6 +539,16 @@ body {
     font-size: 14px;
     color: #000;
     font-weight: 600;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #d0d0d0;
+
+    &:focus {
+      outline: none;
+    }
+    &:focus::placeholder {
+      opacity: 0;
+    }
   }
 
   &__dropdown {

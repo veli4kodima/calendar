@@ -90,6 +90,7 @@ const CalendarBody = (props) => {
               className={`calendar-table__body-row teamColor${
                 (index % 4) + 1
               } team${index + 1} team-first-row`}
+              key={`teamtype${index + 1}`}
             >
               <td className="calendar-table__body-first-column first-column">
                 <div className="team-info-cell">
@@ -121,7 +122,7 @@ const CalendarBody = (props) => {
                         ? 'calendar-table__body-column weekend'
                         : 'calendar-table__body-column'
                     }`}
-                    key={'day' + (index + 1)}
+                    key={'title-row-day' + (index + 1)}
                   ></td>
                 ))
               }
@@ -131,7 +132,6 @@ const CalendarBody = (props) => {
               //* SHOWING EVERY TEAM MEMBER
               item.members.map((element, count) => {
                 const memberPaidDays = getPaidDays(element.vacations);
-                // console.log(getPaidDays(element.vacations));
                 return (
                   <tr
                     className={` ${
@@ -143,6 +143,7 @@ const CalendarBody = (props) => {
                             (index % 4) + 1
                           } team${index + 1}`
                     } `}
+                    key={`${element.name}`}
                   >
                     <td
                       className={`calendar-table__body-first-column first-column`}
@@ -159,13 +160,13 @@ const CalendarBody = (props) => {
                                 ? 'calendar-table__body-column weekend'
                                 : 'calendar-table__body-column'
                             }`}
-                            key={'day' + (index + 1)}
+                            key={'user-row-day' + (index + 1)}
                             style={{ position: 'relative' }}
                           >
                             {addPaidDays(
                               index + 1,
                               memberPaidDays,
-                              props.currentDate.getMonth() + 1
+                              props.currentDate
                             )}
                           </td>
                         );

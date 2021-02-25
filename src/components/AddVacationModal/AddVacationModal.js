@@ -25,7 +25,6 @@ export default class AddVacationModal extends Component {
   };
 
   render() {
-    console.log(this.state.selectedTeam, this.state.selectedUser);
     return (
       <>
         <div className="modal__overlay"></div>
@@ -39,11 +38,20 @@ export default class AddVacationModal extends Component {
             <div className="modal_dates_inner">
               <div className="modal__column">
                 <div className="modal__subtitle">From</div>
-                <div className="modal__date">15.06.2020</div>
+                <input
+                  type="date"
+                  className="modal__date modal__date-start"
+                  placeholder="15.06.2020"
+                ></input>
               </div>
               <div className="modal__column">
                 <div className="modal__subtitle">To</div>
-                <div className="modal__date">18.06.2020</div>
+
+                <input
+                  type="date"
+                  className="modal__date modal__date-end"
+                  placeholder="18.06.2020"
+                ></input>
               </div>
             </div>
 
@@ -79,7 +87,7 @@ export default class AddVacationModal extends Component {
             <div className="modal__title modal__title--vac-type">Vac Type</div>
             <select className="modal__dropdown modal__dropdown--vac-type">
               <option>Paid</option>
-              <option>Unpaid</option>
+              <option>UnPaid</option>
             </select>
 
             <div className="modal__footer">

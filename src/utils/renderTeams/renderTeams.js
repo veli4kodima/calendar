@@ -10,6 +10,7 @@ const renderTeams = () => {
             vacations: [
               { startDate: '20.12.2020', endDate: '22.12.2020', type: 'Paid' },
               { startDate: '20.11.2020', endDate: '22.11.2020', type: 'Paid' },
+              { startDate: '26.02.2020', endDate: '04.03.2020', type: 'Paid' },
             ],
           },
           {
