@@ -220,7 +220,7 @@ const CalendarBody = (props) => {
                       }
                                             {
                         getPaidDays(element.vacations).map((paidDaysItem, paidDaysIndex) => (
-                          paidDaysItem.startMonth !== paidDaysItem.endMonth && paidDaysItem.startMonth !== props.currentDate.getMonth() + 1 ? paidDaysItem.endDay : ''
+                          paidDaysItem.startMonth !== paidDaysItem.endMonth && paidDaysItem.startMonth !== props.currentDate.getMonth() + 1 && paidDaysItem.endMonth === props.currentDate.getMonth() + 1 ? paidDaysItem.endDay : ''
                         ))
                       }
                     </td>
