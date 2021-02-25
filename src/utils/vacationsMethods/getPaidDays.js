@@ -10,6 +10,6 @@ export default function getPaidDays(vacations) {
       type: vacation.type,
     });
   });
-
+  console.log(paidDays);
   return paidDays;
 }

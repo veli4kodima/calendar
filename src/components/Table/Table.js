@@ -65,6 +65,7 @@ const CalendarBody = (props) => {
     props.currentDate.getMonth() + 1,
     0
   ).getDate();
+
   const departmentTeams = props.departmentTeams;
 
   //* GETTING CURRENT MONTH DAYS
@@ -79,6 +80,8 @@ const CalendarBody = (props) => {
       })
     );
   }
+
+  console.log(departmentTeams);
 
   return (
     <tbody className="calendar-table__body">
@@ -172,7 +175,23 @@ const CalendarBody = (props) => {
                         );
                       })
                     }
-                    <td className="calendar-table__body-column sum-cell"></td>
+                    <td className="calendar-table__body-column sum-cell">
+                      {
+                        getPaidDays(element.vacations).map((paidDaysItem, paidDaysIndex) => (
+                          paidDaysItem.startMonth === paidDaysItem.endMonth && paidDaysItem.startMonth === props.currentDate.getMonth() + 1 ? paidDaysItem.endDay + 1 - paidDaysItem.startDay : ''
+                        ))
+                      }
+                      {
+                        getPaidDays(element.vacations).map((paidDaysItem, paidDaysIndex) => (
+                          paidDaysItem.startMonth !== paidDaysItem.endMonth && paidDaysItem.startMonth === props.currentDate.getMonth() + 1 ? daysInMonth - paidDaysItem.startDay + 1 : ''
+                        ))
+                      }
+                                            {
+                        getPaidDays(element.vacations).map((paidDaysItem, paidDaysIndex) => (
+                          paidDaysItem.startMonth !== paidDaysItem.endMonth && paidDaysItem.startMonth !== props.currentDate.getMonth() + 1 ? paidDaysItem.endDay : ''
+                        ))
+                      }
+                    </td>
                   </tr>
                 );
               })
