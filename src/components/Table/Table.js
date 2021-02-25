@@ -4,6 +4,17 @@ import changeModalVis from '../../utils/changeModalVis/changeModalVis';
 import getPaidDays from '../../utils/vacationsMethods/getPaidDays';
 import addPaidDays from '../../utils/vacationsMethods/addPaidDays';
 
+// addPaidDays(cellNumber, paidDays, rowNumber, teamNumber) {
+//   let element = "";
+
+//   paidDays.forEach((day) => {
+//     if(day.month === this.month) {
+      
+//     }
+//   })
+// }
+
+
 const CalendarHead = (props) => {
   const monthDays = [];
   const daysInMonth = new Date(
@@ -67,6 +78,28 @@ const CalendarBody = (props) => {
   ).getDate();
 
   const departmentTeams = props.departmentTeams;
+  console.log(departmentTeams);
+  // console.log(props.currentDate.toLocaleDateString('en-US', {
+  //   day: '2-digit',
+  //   month: 'numeric',
+  //   year: 'numeric'
+  // }));
+  console.log(departmentTeams.teams[0].members[0].vacations[0].startDate.substr(-7).replace(/\./gi, '/' ));
+  console.log(props.currentDate.toLocaleDateString('en-US', {
+    month: 'numeric',
+    year: 'numeric'
+  }) === departmentTeams.teams[0].members[0].vacations[0].startDate.substr(-7).replace(/\./gi, '/') );
+  // console.log(props.currentDate.toLocaleDateString('en-US', {
+  //   month: 'numeric'
+  // }) === departmentTeams.teams[0].members[0].vacations[0].startDate.substr(3, 2) );
+  
+
+    //  departmentTeams.teams.forEach((teamItem, teamIndex) => {
+    //    teamItem.members.forEach((membersItem, membersIndex) => {
+    //     paidDays.push(membersItem.vacations);
+    //   })
+    // })
+    // console.log(paidDays);
 
   //* GETTING CURRENT MONTH DAYS
   for (let dayCounter = 0; dayCounter < daysInMonth; dayCounter++) {
@@ -80,7 +113,6 @@ const CalendarBody = (props) => {
       })
     );
   }
-
   console.log(departmentTeams);
 
   return (
